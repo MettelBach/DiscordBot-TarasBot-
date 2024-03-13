@@ -15,7 +15,7 @@ public class App
     {
         Bot bot = new Bot();
 
-        final String TOKEN = "MTIxNzI2MDIxMDg1MTE1MTkxNA.GMSZF8.E-_7n6nWNjO5dIiz2TRmA8uhjBn1Oy3X-5jwKs";
+        final String TOKEN = "insert token here";
 
         // Реализация функционала бота
         JDABuilder.createLight(TOKEN) // Самое простое подключение к боту
