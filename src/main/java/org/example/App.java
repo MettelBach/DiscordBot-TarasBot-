@@ -14,7 +14,7 @@ public class App
     {
         Bot bot = new Bot();
 
-        final String TOKEN = "";
+        final String TOKEN = System.getenv("TOKEN");
 
         // Создаем список GatewayIntent
         List<GatewayIntent> intents = new ArrayList<>();
