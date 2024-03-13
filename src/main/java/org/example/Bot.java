@@ -30,14 +30,14 @@ public class Bot extends ListenerAdapter {
     public void onReady(ReadyEvent event) {
         event
         .getJDA()
-        .getTextChannelById("1215380369713660016")
+        .getTextChannelById("1053301948427796481")
         .sendMessage("Успішно підключено")
         .queue();
 
         scheduler = Executors.newSingleThreadScheduledExecutor();
         scheduler.schedule(() -> event
                                 .getJDA()
-                                .getTextChannelById("1215380369713660016")
+                                .getTextChannelById("1053301948427796481")
                                 .sendMessage("Ваше сообщение")
                                 .queue(), 24, TimeUnit.HOURS);
     }
