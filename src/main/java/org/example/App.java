@@ -14,7 +14,7 @@ public class App
     {
         Bot bot = new Bot();
 
-        final String TOKEN = "insert token here";
+        final String TOKEN = "MTIxNzI2MDIxMDg1MTE1MTkxNA.GdXLw0.waZKQOIwob5Bp0X3fZWFgGWU8kaVD5cBhau28s";
 
         // Создаем список GatewayIntent
         List<GatewayIntent> intents = new ArrayList<>();
