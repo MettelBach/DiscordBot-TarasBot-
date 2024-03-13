@@ -5,8 +5,7 @@ import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 public class App
@@ -17,17 +16,17 @@ public class App
 
         final String TOKEN = "insert token here";
 
+        // Создаем список GatewayIntent
+        List<GatewayIntent> intents = new ArrayList<>();
+        intents.add(GatewayIntent.GUILD_MESSAGES); // Получает уведомление о новых сообщения
+        intents.add(GatewayIntent.MESSAGE_CONTENT); // Получает содержимое новых сообщений
+
         // Реализация функционала бота
         JDABuilder.createLight(TOKEN) // Самое простое подключение к боту
-                  .addEventListeners(bot) // Накидывание прослушки
-                  .enableIntents( // Какие функции включаем (Какие события полчаю от Дискорд)
-                          List.of( // Колекция функций
-                                  GatewayIntent.GUILD_MESSAGES, // Получает уведомление о новых сообщения
-                                  GatewayIntent.MESSAGE_CONTENT // Получает содержимое новых сообщений
-                          )
-                  )
-                  .setStatus(OnlineStatus.ONLINE) // Статус бота ОНЛАЙН
-                  .setActivity(Activity.customStatus("Перечитує Кобзар")) // Что делает бот
-                  .build(); // Сделать
+                .addEventListeners(bot) // Накидывание прослушки
+                .enableIntents(intents) // Передаем список GatewayIntent
+                .setStatus(OnlineStatus.ONLINE) // Статус бота ОНЛАЙН
+                .setActivity(Activity.customStatus("Перечитує Кобзар")) // Что делает бот
+                .build(); // Сделать
     }
 }
